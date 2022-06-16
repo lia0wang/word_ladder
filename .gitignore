@@ -36,4 +36,9 @@ build*/*
 .vscode/ipch/*
 .clangd/*
 vcpkg/*
-config*/*
+
+# Self
+config/*
+.vscode/*
+.cirrus.yml
+.clang-format
