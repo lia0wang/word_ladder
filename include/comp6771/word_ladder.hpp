@@ -23,7 +23,8 @@ namespace word_ladder {
 	                            std::string const& to,
 	                            std::unordered_set<std::string> const& lexicon)
 	   -> std::vector<std::vector<std::string>>;
-	[[nodiscard]] auto get_new_lexicon(std::string const& from, std::unordered_set<std::string> const& lexicon)
+	[[nodiscard]] auto
+	get_new_lexicon(std::string const& from, std::unordered_set<std::string> const& lexicon)
 	   -> std::unordered_set<std::string>;
 	[[nodiscard]] auto is_adjacent(std::string const& word1, std::string const& word2) -> bool;
 	[[nodiscard]] auto has_error(std::string const& from,
@@ -33,10 +34,11 @@ namespace word_ladder {
 	                                   std::string const& dest,
 	                                   std::unordered_set<std::string> lexicon)
 	   -> std::unordered_map<std::string, std::vector<std::string>>;
-	[[nodiscard]] auto BFS_get_paths(std::string const src,
-	                            std::string const dest,
-	                            std::unordered_map<std::string, std::vector<std::string>> const graph)
-	   ->std::vector<std::vector<std::string>>;
+	[[nodiscard]] auto
+	BFS_get_paths(std::string const src,
+	              std::string const dest,
+	              std::unordered_map<std::string, std::vector<std::string>> const graph)
+	   -> std::vector<std::vector<std::string>>;
 
 } // namespace word_ladder
 
