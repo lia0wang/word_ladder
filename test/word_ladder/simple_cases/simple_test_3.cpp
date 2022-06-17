@@ -28,8 +28,8 @@ TEST_CASE("awake -> sleep") {
 
     // check if each two words in each ladder are adjacent
     for (auto const& ladder : ladders) {
-        for (auto i = 0; i < std::size(ladder) - 1; ++i) {
-            CHECK(word_ladder::is_adjacent(ladder[i], ladder[i+1]));
+        for (auto i = ladder.begin(); std::next(i) != ladder.end(); ++i) {
+            CHECK(word_ladder::is_adjacent(*i, *std::next(i)));
         }
     }
 }
