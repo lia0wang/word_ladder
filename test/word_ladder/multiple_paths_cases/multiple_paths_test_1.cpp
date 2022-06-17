@@ -31,14 +31,14 @@ TEST_CASE("work -> play") {
 	   {"work", "wort", "bort", "boat", "blat", "plat", "play"},
 	   {"work", "wort", "port", "pert", "peat", "plat", "play"},
 	   {"work", "wort", "wert", "pert", "peat", "plat", "play"}};
-    CHECK(ladders.size() == 12);
+	CHECK(ladders.size() == 12);
 	CHECK(ladders == expected);
 	// check the ladders is sorted
 	CHECK(std::is_sorted(ladders.begin(), ladders.end()));
-    // check if each two words in each ladder are adjacent
-    for (auto const& ladder : ladders) {
-        for (auto i = ladder.begin(); std::next(i) != ladder.end(); ++i) {
-            CHECK(word_ladder::is_adjacent(*i, *std::next(i)));
-        }
-    }
+	// check if each two words in each ladder are adjacent
+	for (auto const& ladder : ladders) {
+		for (auto i = ladder.begin(); std::next(i) != ladder.end(); ++i) {
+			CHECK(word_ladder::is_adjacent(*i, *std::next(i)));
+		}
+	}
 }

@@ -23,10 +23,10 @@ TEST_CASE("atlases -> cabaret") {
 
 	CHECK(std::is_sorted(ladders.begin(), ladders.end()));
 
-    // check if each two words in each ladder are adjacent
-    for (auto const& ladder : ladders) {
-        for (auto i = ladder.begin(); std::next(i) != ladder.end(); ++i) {
-            CHECK(word_ladder::is_adjacent(*i, *std::next(i)));
-        }
-    }
+	// check if each two words in each ladder are adjacent
+	for (auto const& ladder : ladders) {
+		for (auto i = ladder.begin(); std::next(i) != ladder.end(); ++i) {
+			CHECK(word_ladder::is_adjacent(*i, *std::next(i)));
+		}
+	}
 }

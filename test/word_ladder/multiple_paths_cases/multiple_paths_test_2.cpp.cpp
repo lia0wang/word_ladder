@@ -8,7 +8,6 @@
 //          - check if the ladders is same as the expected ladders
 //          - check if each two words in each ladder are adjacent
 
-
 #include <comp6771/word_ladder.hpp>
 
 #include <string>
@@ -23,29 +22,27 @@ TEST_CASE("charge -> comedo") {
 	CHECK(std::size(ladders) == 4);
 	CHECK(std::size(ladders[0]) == 23);
 
-	auto expected = std::vector<std::vector<std::string>>{{
-	"charge", "change", "changs", "chants", "chints", "chines", "chined",
-  "coined", "coiner", "conner", "conger", "conges", "conies", "conins",
-  "coning", "coming", "homing", "hominy", "homily", "homely", "comely",
-  "comedy", "comedo" }, { "charge", "change", "changs", "chants", "chints",
-  "chines", "chined", "coined", "coiner", "conner", "conger", "conges",
-  "conies", "conins", "coning", "honing", "homing", "hominy", "homily",
-  "homely", "comely", "comedy", "comedo" }, { "charge", "change", "changs",
-  "chants", "chints", "chines", "chined", "coined", "conned", "conner",
-  "conger", "conges", "conies", "conins", "coning", "coming", "homing",
-  "hominy", "homily", "homely", "comely", "comedy", "comedo" }, { "charge",
-  "change", "changs", "chants", "chints", "chines", "chined", "coined",
-  "conned", "conner", "conger", "conges", "conies", "conins", "coning",
-  "honing", "homing", "hominy", "homily", "homely", "comely", "comedy",
-  "comedo" } };
+	auto expected = std::vector<std::vector<std::string>>{
+	   {"charge", "change", "changs", "chants", "chints", "chines", "chined", "coined",
+	    "coiner", "conner", "conger", "conges", "conies", "conins", "coning", "coming",
+	    "homing", "hominy", "homily", "homely", "comely", "comedy", "comedo"},
+	   {"charge", "change", "changs", "chants", "chints", "chines", "chined", "coined",
+	    "coiner", "conner", "conger", "conges", "conies", "conins", "coning", "honing",
+	    "homing", "hominy", "homily", "homely", "comely", "comedy", "comedo"},
+	   {"charge", "change", "changs", "chants", "chints", "chines", "chined", "coined",
+	    "conned", "conner", "conger", "conges", "conies", "conins", "coning", "coming",
+	    "homing", "hominy", "homily", "homely", "comely", "comedy", "comedo"},
+	   {"charge", "change", "changs", "chants", "chints", "chines", "chined", "coined",
+	    "conned", "conner", "conger", "conges", "conies", "conins", "coning", "honing",
+	    "homing", "hominy", "homily", "homely", "comely", "comedy", "comedo"}};
 	CHECK(ladders == expected);
 
 	CHECK(std::is_sorted(ladders.begin(), ladders.end()));
 
-    // check if each two words in each ladder are adjacent
-    for (auto const& ladder : ladders) {
-        for (auto i = ladder.begin(); std::next(i) != ladder.end(); ++i) {
-            CHECK(word_ladder::is_adjacent(*i, *std::next(i)));
-        }
-    }
+	// check if each two words in each ladder are adjacent
+	for (auto const& ladder : ladders) {
+		for (auto i = ladder.begin(); std::next(i) != ladder.end(); ++i) {
+			CHECK(word_ladder::is_adjacent(*i, *std::next(i)));
+		}
+	}
 }

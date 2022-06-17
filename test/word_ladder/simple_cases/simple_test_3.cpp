@@ -22,14 +22,15 @@ TEST_CASE("awake -> sleep") {
 
 	CHECK(std::is_sorted(ladders.begin(), ladders.end()));
 
-	auto expected = std::vector<std::vector<std::string>>{ {"awake","aware","sware","share","sharn","shawn","shewn","sheen","sheep","sleep"},
-	{"awake","aware","sware","share","shire","shirr","shier","sheer","sheep","sleep"} };
+	auto expected = std::vector<std::vector<std::string>>{
+	   {"awake", "aware", "sware", "share", "sharn", "shawn", "shewn", "sheen", "sheep", "sleep"},
+	   {"awake", "aware", "sware", "share", "shire", "shirr", "shier", "sheer", "sheep", "sleep"}};
 	CHECK(ladders == expected);
 
-    // check if each two words in each ladder are adjacent
-    for (auto const& ladder : ladders) {
-        for (auto i = ladder.begin(); std::next(i) != ladder.end(); ++i) {
-            CHECK(word_ladder::is_adjacent(*i, *std::next(i)));
-        }
-    }
+	// check if each two words in each ladder are adjacent
+	for (auto const& ladder : ladders) {
+		for (auto i = ladder.begin(); std::next(i) != ladder.end(); ++i) {
+			CHECK(word_ladder::is_adjacent(*i, *std::next(i)));
+		}
+	}
 }

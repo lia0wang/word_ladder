@@ -20,8 +20,7 @@ TEST_CASE("at -> it") {
 
 	CHECK(std::size(ladders) == 1);
 	CHECK(std::is_sorted(ladders.begin(), ladders.end()));
-	auto expected = std::vector<std::vector<std::string>>{
-	   {"at", "it"}};
+	auto expected = std::vector<std::vector<std::string>>{{"at", "it"}};
 	CHECK(ladders == expected);
 	CHECK(word_ladder::is_adjacent("at", "it"));
 }
