@@ -1,3 +1,11 @@
+// author: Wang, Liao
+// date: 2022-6
+// description:
+//      This Test is to check the error cases when the inputs are incorrect:
+//          - The from and to with different length
+//          - The from or to is not in the lexicon
+//          - The lexicon is less than 2 words
+
 #include <comp6771/word_ladder.hpp>
 
 #include <unordered_set>
